@@ -1,9 +1,18 @@
+## [2.0.2] - 2026-02-16
+
+### 🚀 Features
+
+- *(npmignore)* Add dev-scripts to .npmignore
 ## [2.0.1] - 2026-02-16
 
 ### 🚀 Features
 
 - *(extension)* Add parrot extension for editing AI responses externally
 - *(pkg)* Update package info and developer scripts
+
+### ⚙️ Miscellaneous Tasks
+
+- Release 2.0.1
 ## [1.2.1] - 2026-02-16
 
 ### ⚙️ Miscellaneous Tasks
