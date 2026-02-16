@@ -1,8 +1,17 @@
+## [1.1.0] - 2026-02-16
+
+### 🚀 Features
+
+- *(npmignore)* Include release scripts in npm package distribution
 ## [1.0.3] - 2026-02-16
 
 ### 🚜 Refactor
 
 - *(docs)* Update logo path in README to use absolute URL
+
+### ⚙️ Miscellaneous Tasks
+
+- Release 1.0.3
 ## [1.0.2] - 2026-02-16
 
 ### 🚀 Features
