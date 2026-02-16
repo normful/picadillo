@@ -11,7 +11,6 @@
     "url": "https://github.com/normful/picadillo/issues"
   },
   "readme": "README.md",
-  "type": "module",
   "keywords": [
     "pi",
     "pi-coding-agent",
@@ -26,6 +25,8 @@
   "author": "normful",
   "license": "MIT",
   "peerDependencies": {
-    "@mariozechner/pi-coding-agent": "*"
+    "@mariozechner/pi-coding-agent": "*",
+    "@mariozechner/pi-ai": "*",
+    "@mariozechner/pi-tui": "*"
   }
 }
