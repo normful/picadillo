@@ -1,4 +1,4 @@
-## [1.0.1] - 2026-02-16
+## [1.0.2] - 2026-02-16
 
 ### 🚀 Features
 
@@ -7,6 +7,7 @@
 - *(release)* Add release-it configuration to automate releases
 - *(deps)* Add git-cliff configuration file
 - *(ci)* Add generate-changelog.sh script to automate changelog generation
+- *(release)* Add changelog generation hooks to release process
 
 ### 💼 Other
 
@@ -24,3 +25,4 @@
 
 - Remove themes directory
 - Add release-it script
+- *(package.json)* Add publishConfig to make package publicly accessible on publish
