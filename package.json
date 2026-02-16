@@ -32,7 +32,8 @@
   "peerDependencies": {
     "@mariozechner/pi-coding-agent": "*",
     "@mariozechner/pi-ai": "*",
-    "@mariozechner/pi-tui": "*"
+    "@mariozechner/pi-tui": "*",
+    "typescript": "^5"
   },
   "pi": {
     "prompts": [],
@@ -40,5 +41,8 @@
     "skills": [
       "./run-in-tmux/SKILL.md"
     ]
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
   }
 }
