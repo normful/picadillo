@@ -1,16 +1,8 @@
 {
-  "description": "Norman's pi coding agent commands, skills, extensions",
+  "name": "@normful/picadillo",
   "version": "1.0.0",
   "private": false,
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/normful/picadillo.git"
-  },
-  "homepage": "https://github.com/normful/picadillo#readme",
-  "bugs": {
-    "url": "https://github.com/normful/picadillo/issues"
-  },
-  "readme": "README.md",
+  "description": "Norman's pi coding agent commands, skills, extensions",
   "keywords": [
     "pi",
     "pi-coding-agent",
@@ -22,8 +14,21 @@
     "pi-extension",
     "pi-skill"
   ],
-  "author": "normful",
+  "homepage": "https://github.com/normful/picadillo#readme",
+  "bugs": {
+    "url": "https://github.com/normful/picadillo/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/normful/picadillo.git"
+  },
   "license": "MIT",
+  "author": "normful",
+  "type": "commonjs",
+  "main": "none",
+  "scripts": {
+    "test": "bun test"
+  },
   "peerDependencies": {
     "@mariozechner/pi-coding-agent": "*",
     "@mariozechner/pi-ai": "*",
