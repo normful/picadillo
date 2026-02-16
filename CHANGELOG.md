@@ -1,8 +1,17 @@
+## [2.0.3] - 2026-02-16
+
+### 📚 Documentation
+
+- *(README)* Add parrot extension demo screenshot to README
 ## [2.0.2] - 2026-02-16
 
 ### 🚀 Features
 
 - *(npmignore)* Add dev-scripts to .npmignore
+
+### ⚙️ Miscellaneous Tasks
+
+- Release 2.0.2
 ## [2.0.1] - 2026-02-16
 
 ### 🚀 Features
