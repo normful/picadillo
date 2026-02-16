@@ -29,6 +29,13 @@ repeatedly poke reality until it tastes better.”
 pi install git:github.com/normful/picadillo
 ```
 
+Or try without installing:
+
+```bash
+pi -e git:github.com/normful/picadillo
+```
+
+
 ## Skills
 
 | Skill | Description |
@@ -39,3 +46,9 @@ pi install git:github.com/normful/picadillo
 ## Extensions
 
 Coming soon!
+
+## Uninstall
+
+```bash
+pi remove git:github.com/ben-vargas/pi-packages
+```
