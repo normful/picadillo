@@ -6,3 +6,5 @@ logo.png
 tsconfig.json
 .release-it.json
 .gitattributes
+generate-changelog.sh
+cliff.toml
