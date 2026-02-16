@@ -26,15 +26,10 @@ repeatedly poke reality until it tastes better.”
 ## Install
 
 ```bash
-pi install git:github.com/normful/picadillo
+pi install https://github.com/normful/picadillo
 ```
 
-Or try without installing:
-
-```bash
-pi -e git:github.com/normful/picadillo
-```
-
+Configure what you don't want with `pi config`. It will modify `~/.pi/agent/settings.json`
 
 ## Skills
 
@@ -50,5 +45,5 @@ Coming soon!
 ## Uninstall
 
 ```bash
-pi remove git:github.com/ben-vargas/pi-packages
+pi remove https://github.com/normful/picadillo
 ```
