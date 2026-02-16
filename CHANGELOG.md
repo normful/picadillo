@@ -1,3 +1,8 @@
+## [1.0.3] - 2026-02-16
+
+### 🚜 Refactor
+
+- *(docs)* Update logo path in README to use absolute URL
 ## [1.0.2] - 2026-02-16
 
 ### 🚀 Features
@@ -26,3 +31,4 @@
 - Remove themes directory
 - Add release-it script
 - *(package.json)* Add publishConfig to make package publicly accessible on publish
+- Release 1.0.2
