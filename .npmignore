@@ -8,3 +8,4 @@ tsconfig.json
 .gitattributes
 generate-changelog.sh
 cliff.toml
+tests

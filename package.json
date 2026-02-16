@@ -2,7 +2,7 @@
   "name": "@normful/picadillo",
   "version": "1.2.1",
   "private": false,
-  "description": "Norman's pi coding agent commands, skills, extensions",
+  "description": "pi agent skills/extensions: run-in-tmux, parrot (send AI message with edited version of AI message)",
   "keywords": [
     "pi",
     "pi-coding-agent",
@@ -28,13 +28,14 @@
   "main": "none",
   "scripts": {
     "test": "bun test",
-    "release": "release-it"
+    "release": "release-it",
+    "typecheck": "tsc --noEmit"
   },
   "peerDependencies": {
     "@mariozechner/pi-coding-agent": "*",
     "@mariozechner/pi-ai": "*",
     "@mariozechner/pi-tui": "*",
-    "typescript": "^5"
+    "typescript": "^5.9.3"
   },
   "devDependencies": {
     "@types/bun": "latest",
