@@ -31,6 +31,10 @@ pi install https://github.com/normful/picadillo
 
 Configure what you don't want with `pi config`. It will modify `~/.pi/agent/settings.json`
 
+## Dependencies
+
+- [`uv`](https://github.com/astral-sh/uv) — Required runtime dependency for running Python scripts
+
 ## Skills
 
 | Skill | Description |
@@ -40,7 +44,11 @@ Configure what you don't want with `pi config`. It will modify `~/.pi/agent/sett
 
 ## Extensions
 
-Coming soon!
+| Extension | Description |
+|-----------|-------------|
+| [parrot](extensions/parrot.ts) | Opens the last AI response in an external text editor (respects `$VISUAL` or `$EDITOR`), then sends your edited content back to the chat. Useful for editing AI responses before re-sending, copying output to a full-featured editor, or iterating with custom edits. Usage: `/parrot` or `Alt+R` |
+
+[![asciicast](https://asciinema.org/a/788693.svg)](https://asciinema.org/a/788693)
 
 ## Uninstall
 
