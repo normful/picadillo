@@ -33,5 +33,11 @@
     "@mariozechner/pi-coding-agent": "*",
     "@mariozechner/pi-ai": "*",
     "@mariozechner/pi-tui": "*"
+  },
+  "pi": {
+    "extensions": ["./extensions"],
+    "skills": ["./skills"],
+    "prompts": ["./prompts"],
+    "themes": ["./themes"]
   }
 }
