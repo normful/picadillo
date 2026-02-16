@@ -1,7 +1,7 @@
 # Picadillo
 
 <p align="center">
-  <img src="./logo.png" alt="Picadillo" width="400">
+  <img src="./logo.png" alt="Picadillo" width="800">
 </p>
 
 **picadillo**
