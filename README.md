@@ -21,8 +21,6 @@
 *piccare* (“to pierce”). Folk etymology proposes a secondary meaning: “to
 repeatedly poke reality until it tastes better.”
 
-**Usage note:** May contain olives, raisins, or side effects.
-
 ## Install
 
 ```bash
@@ -47,6 +45,9 @@ Configure what you don't want with `pi config`. It will modify `~/.pi/agent/sett
 | Extension | Description |
 |-----------|-------------|
 | [parrot](extensions/parrot.ts) | Opens the last AI response in an external text editor (respects `$VISUAL` or `$EDITOR`), then sends your edited content back to the chat. Useful for editing AI responses before re-sending, copying output to a full-featured editor, or iterating with custom edits. Usage: `/parrot` or `Alt+R` |
+
+
+### Parrot Extension Demo
 
 [![asciicast](https://asciinema.org/a/788693.svg)](https://asciinema.org/a/788693)
 
