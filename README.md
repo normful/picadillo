@@ -26,28 +26,8 @@ repeatedly poke reality until it tastes better.”
 ## Install
 
 ```bash
-pi install npm:@normful/picadillo
+pi install git:github.com/normful/picadillo
 ```
-
-Or try without installing:
-
-```bash
-pi -e npm:@normful/picadillo
-```
-
-## What's Inside
-
-- **Extensions** — Custom commands and tools for the coding agent
-- **Skills** — Specialized workflows for common tasks
-- **Prompts** — Reusable prompt templates
-
-## Usage
-
-Once installed, extensions and skills load automatically. Check `pi help` for available commands.
-
-## Extensions
-
-> No extensions yet — contributions welcome! See [extending-pi](skills/extending-pi/) for guidance.
 
 ## Skills
 
@@ -55,6 +35,7 @@ Once installed, extensions and skills load automatically. Check `pi help` for av
 |-------|-------------|
 | [run-in-tmux](skills/run-in-tmux/) | Run commands in a new tmux session with split panes. Useful for dev environments, parallel processes, and persistent background tasks. |
 
----
 
-Made with ☕ by [@normful](https://github.com/normful)
+## Extensions
+
+Coming soon!
