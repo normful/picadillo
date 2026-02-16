@@ -10,7 +10,7 @@
 1.  A ground meat dish cooked with tomatoes and seasonings, sometimes with
     potatoes, olives, or raisins; served on its own or as a filling.
 
-2. *(tech slang)* A mix of pi coding agent extensions,
+2. *(tech slang)* A mix of [`pi`](https://github.com/badlogic/pi-mono) coding agent extensions,
    skills, and commands combined into one cohesive workflow; modular,
    interoperable, and—depending on the build—
    - occasionally containing undocumented features
