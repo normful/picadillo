@@ -35,8 +35,9 @@
     "@mariozechner/pi-tui": "*"
   },
   "pi": {
-    "extensions": ["./extensions"],
-    "skills": ["./skills"],
-    "prompts": ["./prompts"]
+    "extensions": [],
+    "skills": [
+      "./run-in-tmux/SKILL.md"
+    ]
   }
 }
