@@ -5,9 +5,9 @@
   },
   "github": {
     "release": true,
-    "autoGenerate": false
+    "autoGenerate": true
   },
   "npm": {
-    "publish": false
+    "publish": true
   }
 }

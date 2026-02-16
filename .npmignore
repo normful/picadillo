@@ -2,3 +2,7 @@
 .gitignore
 *.log
 AGENTS.md
+logo.png
+tsconfig.json
+.release-it.json
+.gitattributes
