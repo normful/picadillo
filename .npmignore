@@ -9,3 +9,4 @@ tsconfig.json
 generate-changelog.sh
 cliff.toml
 tests
+dev-scripts
