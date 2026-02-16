@@ -1,7 +1,7 @@
 # Picadillo
 
 <p align="center">
-  <img src="./logo.png" alt="Picadillo" width="800">
+  <img src="https://media.githubusercontent.com/media/normful/picadillo/refs/heads/main/logo.png" alt="Picadillo" width="800">
 </p>
 
 **picadillo**
