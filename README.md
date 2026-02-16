@@ -45,6 +45,16 @@ pi -e npm:@normful/picadillo
 
 Once installed, extensions and skills load automatically. Check `pi help` for available commands.
 
+## Extensions
+
+> No extensions yet — contributions welcome! See [extending-pi](skills/extending-pi/) for guidance.
+
+## Skills
+
+| Skill | Description |
+|-------|-------------|
+| [run-in-tmux](skills/run-in-tmux/) | Run commands in a new tmux session with split panes. Useful for dev environments, parallel processes, and persistent background tasks. |
+
 ---
 
 Made with ☕ by [@normful](https://github.com/normful)
