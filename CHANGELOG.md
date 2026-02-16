@@ -1,8 +1,18 @@
+## [1.2.0] - 2026-02-16
+
+### 🚜 Refactor
+
+- *(readme)* Update installation and uninstallation commands to use direct HTTPS URL
+- *(package.json)* Remove obsolete "pi" configuration section
 ## [1.1.0] - 2026-02-16
 
 ### 🚀 Features
 
 - *(npmignore)* Include release scripts in npm package distribution
+
+### ⚙️ Miscellaneous Tasks
+
+- Release 1.1.0
 ## [1.0.3] - 2026-02-16
 
 ### 🚜 Refactor
