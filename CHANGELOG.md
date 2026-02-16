@@ -1,3 +1,14 @@
+## [2.0.1] - 2026-02-16
+
+### 🚀 Features
+
+- *(extension)* Add parrot extension for editing AI responses externally
+- *(pkg)* Update package info and developer scripts
+## [1.2.1] - 2026-02-16
+
+### ⚙️ Miscellaneous Tasks
+
+- Release 1.2.1
 ## [1.2.0] - 2026-02-16
 
 ### 🚜 Refactor
