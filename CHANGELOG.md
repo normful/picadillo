@@ -4,6 +4,10 @@
 
 - *(readme)* Update installation and uninstallation commands to use direct HTTPS URL
 - *(package.json)* Remove obsolete "pi" configuration section
+
+### ⚙️ Miscellaneous Tasks
+
+- Release 1.2.0
 ## [1.1.0] - 2026-02-16
 
 ### 🚀 Features
