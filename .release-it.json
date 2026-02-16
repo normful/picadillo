@@ -3,9 +3,12 @@
   "git": {
     "commitMessage": "chore: release ${version}"
   },
+  "hooks": {
+    "after:bump": "./generate-changelog.sh"
+  },
   "github": {
     "release": true,
-    "autoGenerate": true
+    "releaseNotes": "./generate-changelog.sh stdout"
   },
   "npm": {
     "publish": true
