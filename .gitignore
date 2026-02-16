@@ -2,3 +2,4 @@
 .long-task-harness/
 .build/
 .research/
+node_modules
