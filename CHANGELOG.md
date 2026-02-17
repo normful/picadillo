@@ -1,8 +1,17 @@
+## [6.0.0] - 2026-02-17
+
+### 🚀 Features
+
+- *(overstory)* Rename orchestrator to coordinator
 ## [5.1.1] - 2026-02-17
 
 ### 🐛 Bug Fixes
 
 - Update handleBeforeAgentStart to include userPrompt in content
+
+### ⚙️ Miscellaneous Tasks
+
+- Release 5.1.1
 ## [5.1.0] - 2026-02-17
 
 ### 🚀 Features
