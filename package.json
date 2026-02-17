@@ -2,7 +2,7 @@
   "name": "@normful/picadillo",
   "version": "3.0.0",
   "private": false,
-  "description": "pi agent skills/extensions: run-in-tmux, parrot (send AI message with edited version of AI message)",
+  "description": "pi agent skills & extensions: run-in-tmux, parrot, mulch, overstory",
   "keywords": [
     "pi",
     "pi-coding-agent",

@@ -70,7 +70,7 @@ recording and retrieving structured project learnings.
 ### overstory
 
 Hooks to automatically run `overstory prime` and `overstory mail check` from
-[overstory](https://github.com/steveygge/overstory), along with logging tool
+[overstory](https://github.com/jayminwest/overstory/), along with logging tool
 start/end, session end events, and integration with mulch for learning.
 
 ## Parrot Extension Demo
