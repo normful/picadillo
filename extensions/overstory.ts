@@ -82,12 +82,7 @@ export async function logSessionEnd(
   execFn: ExtensionAPI["exec"],
 ): Promise<void> {
   try {
-    await execFn("overstory", [
-      "log",
-      "session-end",
-      "--agent",
-      "coordinator",
-    ]);
+    await execFn("overstory", ["log", "session-end", "--agent", "coordinator"]);
   } catch (e) {
     console.error("overstory log session-end failed:", e);
   }
@@ -127,7 +122,10 @@ export async function handleSessionStart(
   );
 }
 
-export function handleBeforeAgentStart(userPrompt: string, mailText: string) {
+export function sendMailAppendedToUserPrompt(
+  userPrompt: string,
+  mailText: string,
+) {
   const hasMail = Boolean(mailText);
   return {
     message: {
@@ -213,7 +211,9 @@ export default async function (pi: ExtensionAPI) {
 
   pi.on("before_agent_start", async (event, _ctx) => {
     const mailText = await overstoryMailCheck(pi.exec);
-    return handleBeforeAgentStart(event.prompt, mailText);
+    if (mailText.trim().length > 0) {
+      return sendMailAppendedToUserPrompt(event.prompt, mailText);
+    }
   });
 
   pi.on("tool_execution_end", async (event, _ctx) => {
