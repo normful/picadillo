@@ -221,28 +221,42 @@ describe("overstory", () => {
   });
 
   describe("handleBeforeAgentStart", () => {
-    test("returns message with mail content", () => {
-      const result = handleBeforeAgentStart("mail content");
+    test("returns message with userPrompt and mail content", () => {
+      const result = handleBeforeAgentStart("fix the bug", "You have 5 new messages");
       expect(result).toEqual({
         message: {
           customType: OVERSTORY_MESSAGE_TYPE,
-          content: "mail content",
+          content: "fix the bug\n\n---\n\n INCOMING MAIL JUST RECEIVED\n\nYou have 5 new messages",
           display: true,
         },
       });
     });
 
-    test("returns message for any mail text", () => {
-      const result = handleBeforeAgentStart("You have 5 new messages");
-      expect(result).toBeDefined();
-      expect(result?.message.customType).toBe(OVERSTORY_MESSAGE_TYPE);
-      expect(result?.message.content).toBe("You have 5 new messages");
-      expect(result?.message.display).toBe(true);
+    test("returns empty string when no mail", () => {
+      const result = handleBeforeAgentStart("fix the bug", "");
+      expect(result).toEqual({
+        message: {
+          customType: OVERSTORY_MESSAGE_TYPE,
+          content: "",
+          display: true,
+        },
+      });
     });
 
-    test("returns message even with empty mail", () => {
-      // Unlike gastown's handleBeforeAgentStart, overstory always returns a message
-      const result = handleBeforeAgentStart("");
+    test("returns message with mail only when userPrompt is empty but mail exists", () => {
+      const result = handleBeforeAgentStart("", "You have mail");
+      // When userPrompt is empty but mail exists, it becomes just the mail part
+      expect(result).toEqual({
+        message: {
+          customType: OVERSTORY_MESSAGE_TYPE,
+          content: "\n\n---\n\n INCOMING MAIL JUST RECEIVED\n\nYou have mail",
+          display: true,
+        },
+      });
+    });
+
+    test("returns empty message when both are empty", () => {
+      const result = handleBeforeAgentStart("", "");
       expect(result).toEqual({
         message: {
           customType: OVERSTORY_MESSAGE_TYPE,

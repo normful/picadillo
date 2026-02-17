@@ -127,11 +127,14 @@ export async function handleSessionStart(
   );
 }
 
-export function handleBeforeAgentStart(mailText: string) {
+export function handleBeforeAgentStart(userPrompt: string, mailText: string) {
+  const hasMail = Boolean(mailText);
   return {
     message: {
       customType: OVERSTORY_MESSAGE_TYPE,
-      content: mailText,
+      content: hasMail
+        ? `${userPrompt}\n\n---\n\n INCOMING MAIL JUST RECEIVED\n\n${mailText}`
+        : "",
       display: true,
     },
   };
@@ -186,7 +189,10 @@ export async function isOverstoryRepo(
     const gitRoot = gitRootResult.stdout.trim();
 
     // Check if .overstory directory exists in the git repo root
-    const overstoryDirResult = await execFn("ls", ["-d", `${gitRoot}/.overstory`]);
+    const overstoryDirResult = await execFn("ls", [
+      "-d",
+      `${gitRoot}/.overstory`,
+    ]);
     if (overstoryDirResult.code !== 0) {
       return false; // No .overstory directory
     }
@@ -205,9 +211,9 @@ export default async function (pi: ExtensionAPI) {
     await handleSessionStart(pi.exec, pi.sendMessage);
   });
 
-  pi.on("before_agent_start", async (_event, _ctx) => {
+  pi.on("before_agent_start", async (event, _ctx) => {
     const mailText = await overstoryMailCheck(pi.exec);
-    return handleBeforeAgentStart(mailText);
+    return handleBeforeAgentStart(event.prompt, mailText);
   });
 
   pi.on("tool_execution_end", async (event, _ctx) => {
