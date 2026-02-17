@@ -1,4 +1,4 @@
-import { test, expect, describe, vi, beforeEach, afterEach } from "bun:test";
+import { test, expect, describe, mock, beforeEach, afterEach } from "bun:test";
 import * as fs from "node:fs";
 import type { ExtensionUIContext } from "@mariozechner/pi-coding-agent";
 import type { SessionEntry } from "@mariozechner/pi-coding-agent";
@@ -201,9 +201,9 @@ describe("findLastAssistantMessage", () => {
 describe("handleEditorResult", () => {
   const createMockContext = () => ({
     ui: {
-      notify: vi.fn(),
+      notify: mock(() => {}),
     } as unknown as ExtensionUIContext,
-    sendMessage: vi.fn(),
+    sendMessage: mock(() => {}),
   });
 
   const expectSendMessage = (ctx: ReturnType<typeof createMockContext>, content: string) => {
