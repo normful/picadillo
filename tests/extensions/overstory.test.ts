@@ -12,6 +12,7 @@ import {
   handleToolExecutionStart,
   handleSessionCompact,
   handleSessionShutdown,
+  isOverstoryRepo,
   OVERSTORY_MESSAGE_TYPE,
   type ExecResult,
 } from "../../extensions/overstory";
@@ -357,6 +358,78 @@ describe("overstory", () => {
       await handleSessionShutdown(mockExec);
       // Both calls should have been attempted
       expect(mockExec).toHaveBeenCalledTimes(2);
+    });
+  });
+
+  describe("isOverstoryRepo", () => {
+    test("returns true when in a git repo with .overstory directory", async () => {
+      let callCount = 0;
+      const mockExec = mock<() => Promise<ExecResult>>(() => {
+        callCount++;
+        if (callCount === 1) {
+          // git rev-parse --show-toplevel
+          return Promise.resolve(mockResult("/home/user/my-repo\n"));
+        }
+        // ls -d /home/user/my-repo/.overstory
+        return Promise.resolve(mockResult("/home/user/my-repo/.overstory"));
+      });
+
+      const result = await isOverstoryRepo(mockExec);
+      expect(result).toBe(true);
+      expect(mockExec).toHaveBeenCalledWith("git", ["rev-parse", "--show-toplevel"]);
+      expect(mockExec).toHaveBeenCalledWith("ls", ["-d", "/home/user/my-repo/.overstory"]);
+    });
+
+    test("returns false when .overstory directory does not exist (non-zero exit code)", async () => {
+      let callCount = 0;
+      const mockExec = mock<() => Promise<ExecResult>>(() => {
+        callCount++;
+        if (callCount === 1) {
+          return Promise.resolve(mockResult("/home/user/my-repo\n"));
+        }
+        // ls returns non-zero when directory doesn't exist
+        return Promise.resolve({ stdout: "", stderr: "No such file or directory", code: 2, killed: false });
+      });
+
+      const result = await isOverstoryRepo(mockExec);
+      expect(result).toBe(false);
+    });
+
+    test("returns false when not in a git repo (git rev-parse throws)", async () => {
+      const mockExec = mock<() => Promise<ExecResult>>(() => {
+        return Promise.reject(new Error("fatal: not a git repository"));
+      });
+
+      const result = await isOverstoryRepo(mockExec);
+      expect(result).toBe(false);
+    });
+
+    test("returns false when ls command throws", async () => {
+      let callCount = 0;
+      const mockExec = mock<() => Promise<ExecResult>>(() => {
+        callCount++;
+        if (callCount === 1) {
+          return Promise.resolve(mockResult("/home/user/my-repo\n"));
+        }
+        return Promise.reject(new Error("ls failed"));
+      });
+
+      const result = await isOverstoryRepo(mockExec);
+      expect(result).toBe(false);
+    });
+
+    test("trims whitespace from git root path", async () => {
+      let callCount = 0;
+      const mockExec = mock<() => Promise<ExecResult>>(() => {
+        callCount++;
+        if (callCount === 1) {
+          return Promise.resolve(mockResult("  /home/user/my-repo  \n"));
+        }
+        return Promise.resolve(mockResult("/home/user/my-repo/.overstory"));
+      });
+
+      await isOverstoryRepo(mockExec);
+      expect(mockExec).toHaveBeenCalledWith("ls", ["-d", "/home/user/my-repo/.overstory"]);
     });
   });
 

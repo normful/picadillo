@@ -177,7 +177,30 @@ export async function handleSessionShutdown(
   await Promise.all([logSessionEnd(execFn), mulchLearn(execFn)]);
 }
 
-export default function (pi: ExtensionAPI) {
+export async function isOverstoryRepo(
+  execFn: ExtensionAPI["exec"],
+): Promise<boolean> {
+  try {
+    // Get the git repo root directory (fails if not in a git repo)
+    const gitRootResult = await execFn("git", ["rev-parse", "--show-toplevel"]);
+    const gitRoot = gitRootResult.stdout.trim();
+
+    // Check if .overstory directory exists in the git repo root
+    const overstoryDirResult = await execFn("ls", ["-d", `${gitRoot}/.overstory`]);
+    if (overstoryDirResult.code !== 0) {
+      return false; // No .overstory directory
+    }
+    return true;
+  } catch (e) {
+    return false; // Not in a git repo or other error
+  }
+}
+
+export default async function (pi: ExtensionAPI) {
+  if (!(await isOverstoryRepo(pi.exec))) {
+    return;
+  }
+
   pi.on("session_start", async (_event, _ctx) => {
     await handleSessionStart(pi.exec, pi.sendMessage);
   });
