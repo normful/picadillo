@@ -1,3 +1,8 @@
+## [5.1.0] - 2026-02-17
+
+### 🚀 Features
+
+- *(overstory)* Ensure extension runs only in an Overstory git repository
 ## [4.0.0] - 2026-02-17
 
 ### 🚀 Features
@@ -11,6 +16,7 @@
 ### ⚙️ Miscellaneous Tasks
 
 - Shorten package.json description, fix overstory repo URL
+- Release 4.0.0
 ## [3.0.0] - 2026-02-17
 
 ### 🚀 Features
