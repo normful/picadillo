@@ -1,8 +1,26 @@
+## [3.0.0] - 2026-02-17
+
+### 🚀 Features
+
+- *(extension)* Add mulch extension for project learning management
+- *(extension)* Add gastown extension for gt integration
+
+### 🚜 Refactor
+
+- *(test)* Replace `vi.fn()` with `mock` from `bun:test` in parrot tests
+
+### 📚 Documentation
+
+- Update README with reorganized skills and extensions sections
 ## [2.0.3] - 2026-02-16
 
 ### 📚 Documentation
 
 - *(README)* Add parrot extension demo screenshot to README
+
+### ⚙️ Miscellaneous Tasks
+
+- Release 2.0.3
 ## [2.0.2] - 2026-02-16
 
 ### 🚀 Features
