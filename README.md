@@ -67,6 +67,12 @@ Hooks to automatically run `gt prime` and `gt mail` from [gastown](https://githu
 Hooks to automatically run [mulch](https://github.com/jayminwest/mulch) for
 recording and retrieving structured project learnings.
 
+### overstory
+
+Hooks to automatically run `overstory prime` and `overstory mail check` from
+[overstory](https://github.com/steveygge/overstory), along with logging tool
+start/end, session end events, and integration with mulch for learning.
+
 ## Parrot Extension Demo
 
 [![asciicast](https://asciinema.org/a/788693.svg)](https://asciinema.org/a/788693)
