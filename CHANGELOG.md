@@ -1,8 +1,17 @@
+## [5.1.1] - 2026-02-17
+
+### 🐛 Bug Fixes
+
+- Update handleBeforeAgentStart to include userPrompt in content
 ## [5.1.0] - 2026-02-17
 
 ### 🚀 Features
 
 - *(overstory)* Ensure extension runs only in an Overstory git repository
+
+### ⚙️ Miscellaneous Tasks
+
+- Release 5.1.0
 ## [4.0.0] - 2026-02-17
 
 ### 🚀 Features

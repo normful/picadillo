@@ -1,6 +1,6 @@
 {
   "name": "@normful/picadillo",
-  "version": "5.1.0",
+  "version": "5.1.1",
   "private": false,
   "description": "pi agent skills & extensions: run-in-tmux, parrot, mulch, overstory",
   "keywords": [
