@@ -1,3 +1,16 @@
+## [4.0.0] - 2026-02-17
+
+### 🚀 Features
+
+- *(extension)* Add overstory extension boilerplate and logic
+
+### 📚 Documentation
+
+- Add overstory extension to README
+
+### ⚙️ Miscellaneous Tasks
+
+- Shorten package.json description, fix overstory repo URL
 ## [3.0.0] - 2026-02-17
 
 ### 🚀 Features
@@ -12,6 +25,10 @@
 ### 📚 Documentation
 
 - Update README with reorganized skills and extensions sections
+
+### ⚙️ Miscellaneous Tasks
+
+- Release 3.0.0
 ## [2.0.3] - 2026-02-16
 
 ### 📚 Documentation
