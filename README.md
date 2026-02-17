@@ -27,7 +27,8 @@ repeatedly poke reality until it tastes better.”
 pi install https://github.com/normful/picadillo
 ```
 
-Configure what you don't want with `pi config`. It will modify `~/.pi/agent/settings.json`
+Configure what you don't want with `pi config`. It will modify
+`~/.pi/agent/settings.json`
 
 ## Dependencies
 
@@ -35,19 +36,38 @@ Configure what you don't want with `pi config`. It will modify `~/.pi/agent/sett
 
 ## Skills
 
-| Skill | Description |
-|-------|-------------|
-| [run-in-tmux](skills/run-in-tmux/) | Run commands in a new tmux session with split panes. Useful for dev environments, parallel processes, and persistent background tasks. |
+### run-in-tmux
 
+Run commands in a new tmux session with split panes. Useful for dev
+environments, parallel processes, and persistent background tasks.
+
+### mulch
+
+Usage examples showing how to use [mulch](https://github.com/jayminwest/mulch)
+to record and retrieve structured project
+learnings.
 
 ## Extensions
 
-| Extension | Description |
-|-----------|-------------|
-| [parrot](extensions/parrot.ts) | Opens the last AI response in an external text editor (respects `$VISUAL` or `$EDITOR`), then sends your edited content back to the chat. Useful for editing AI responses before re-sending, copying output to a full-featured editor, or iterating with custom edits. Usage: `/parrot` or `Alt+R` |
+### parrot
 
+Opens the last AI response in an external text editor (respects `$VISUAL` or
+`$EDITOR`), then sends your edited content back to the chat. Useful for editing
+AI responses before re-sending, copying output to a full-featured editor, or
+iterating with custom edits.
 
-### Parrot Extension Demo
+Usage: `/parrot` or `Alt+R`
+
+### gastown
+
+Hooks to automatically run `gt prime` and `gt mail` from [gastown](https://github.com/steveyegge/gastown)
+
+### mulch
+
+Hooks to automatically run [mulch](https://github.com/jayminwest/mulch) for
+recording and retrieving structured project learnings.
+
+## Parrot Extension Demo
 
 [![asciicast](https://asciinema.org/a/788693.svg)](https://asciinema.org/a/788693)
 
