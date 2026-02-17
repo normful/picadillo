@@ -26,14 +26,14 @@ describe("overstory", () => {
       const mockExec = mock<() => Promise<ExecResult>>(() => Promise.resolve(mockResult("prime content")));
       const result = await overstoryPrime(mockExec);
       expect(result).toBe("prime content");
-      expect(mockExec).toHaveBeenCalledWith("overstory", ["prime", "--agent", "orchestrator"]);
+      expect(mockExec).toHaveBeenCalledWith("overstory", ["prime", "--agent", "coordinator"]);
     });
 
     test("returns stdout with compact flag when forCompact is true", async () => {
       const mockExec = mock<() => Promise<ExecResult>>(() => Promise.resolve(mockResult("compact prime")));
       const result = await overstoryPrime(mockExec, true);
       expect(result).toBe("compact prime");
-      expect(mockExec).toHaveBeenCalledWith("overstory", ["prime", "--agent", "orchestrator", "--compact"]);
+      expect(mockExec).toHaveBeenCalledWith("overstory", ["prime", "--agent", "coordinator", "--compact"]);
     });
 
     test("returns empty string when exec throws", async () => {
@@ -60,7 +60,7 @@ describe("overstory", () => {
       const mockExec = mock<() => Promise<ExecResult>>(() => Promise.resolve(mockResult("mail content")));
       const result = await overstoryMailCheck(mockExec);
       expect(result).toBe("mail content");
-      expect(mockExec).toHaveBeenCalledWith("overstory", ["mail", "check", "--inject", "--agent", "orchestrator"]);
+      expect(mockExec).toHaveBeenCalledWith("overstory", ["mail", "check", "--inject", "--agent", "coordinator"]);
     });
 
     test("returns empty string when exec throws", async () => {
@@ -80,7 +80,7 @@ describe("overstory", () => {
     test("calls exec with correct arguments", async () => {
       const mockExec = mock<() => Promise<ExecResult>>(() => Promise.resolve(mockResult("")));
       await logToolStart(mockExec, "read-file");
-      expect(mockExec).toHaveBeenCalledWith("overstory", ["log", "tool-start", "--agent", "orchestrator", "--tool-name", "read-file"]);
+      expect(mockExec).toHaveBeenCalledWith("overstory", ["log", "tool-start", "--agent", "coordinator", "--tool-name", "read-file"]);
     });
 
     test("does not throw when exec fails", async () => {
@@ -97,7 +97,7 @@ describe("overstory", () => {
       await logToolStart(mockExec, "write");
 
       expect(mockExec).toHaveBeenCalledTimes(3);
-      expect(mockExec).toHaveBeenCalledWith("overstory", ["log", "tool-start", "--agent", "orchestrator", "--tool-name", "bash"]);
+      expect(mockExec).toHaveBeenCalledWith("overstory", ["log", "tool-start", "--agent", "coordinator", "--tool-name", "bash"]);
     });
   });
 
@@ -105,7 +105,7 @@ describe("overstory", () => {
     test("calls exec with correct arguments", async () => {
       const mockExec = mock<() => Promise<ExecResult>>(() => Promise.resolve(mockResult("")));
       await logToolEnd(mockExec, "read-file");
-      expect(mockExec).toHaveBeenCalledWith("overstory", ["log", "tool-end", "--agent", "orchestrator", "--tool-name", "read-file"]);
+      expect(mockExec).toHaveBeenCalledWith("overstory", ["log", "tool-end", "--agent", "coordinator", "--tool-name", "read-file"]);
     });
 
     test("does not throw when exec fails", async () => {
@@ -119,7 +119,7 @@ describe("overstory", () => {
     test("calls exec with correct arguments", async () => {
       const mockExec = mock<() => Promise<ExecResult>>(() => Promise.resolve(mockResult("")));
       await logSessionEnd(mockExec);
-      expect(mockExec).toHaveBeenCalledWith("overstory", ["log", "session-end", "--agent", "orchestrator"]);
+      expect(mockExec).toHaveBeenCalledWith("overstory", ["log", "session-end", "--agent", "coordinator"]);
     });
 
     test("does not throw when exec fails", async () => {
@@ -271,7 +271,7 @@ describe("overstory", () => {
     test("calls logToolStart with tool name from event", async () => {
       const mockExec = mock<() => Promise<ExecResult>>(() => Promise.resolve(mockResult("")));
       await handleToolExecutionStart(mockExec, { toolName: "bash" });
-      expect(mockExec).toHaveBeenCalledWith("overstory", ["log", "tool-start", "--agent", "orchestrator", "--tool-name", "bash"]);
+      expect(mockExec).toHaveBeenCalledWith("overstory", ["log", "tool-start", "--agent", "coordinator", "--tool-name", "bash"]);
     });
 
     test("does not throw when exec fails", async () => {
@@ -285,7 +285,7 @@ describe("overstory", () => {
     test("calls logToolEnd with tool name from event", async () => {
       const mockExec = mock<() => Promise<ExecResult>>(() => Promise.resolve(mockResult("")));
       await handleToolExecutionEnd(mockExec, { toolName: "read" });
-      expect(mockExec).toHaveBeenCalledWith("overstory", ["log", "tool-end", "--agent", "orchestrator", "--tool-name", "read"]);
+      expect(mockExec).toHaveBeenCalledWith("overstory", ["log", "tool-end", "--agent", "coordinator", "--tool-name", "read"]);
     });
 
     test("does not throw when exec fails", async () => {
@@ -315,7 +315,7 @@ describe("overstory", () => {
       await handleSessionCompact(mockExec, mockSendMessage);
 
       // Verify prime was called with --compact flag
-      expect(mockExec).toHaveBeenCalledWith("overstory", ["prime", "--agent", "orchestrator", "--compact"]);
+      expect(mockExec).toHaveBeenCalledWith("overstory", ["prime", "--agent", "coordinator", "--compact"]);
 
       expect(mockSendMessage).toHaveBeenCalledWith(
         expect.objectContaining({
@@ -347,7 +347,7 @@ describe("overstory", () => {
 
       // Both functions should be called
       expect(mockExec).toHaveBeenCalledTimes(2);
-      expect(mockExec).toHaveBeenCalledWith("overstory", ["log", "session-end", "--agent", "orchestrator"]);
+      expect(mockExec).toHaveBeenCalledWith("overstory", ["log", "session-end", "--agent", "coordinator"]);
       expect(mockExec).toHaveBeenCalledWith("mulch", ["learn"]);
     });
 
@@ -477,7 +477,7 @@ describe("overstory", () => {
 
       await handleSessionCompact(mockExec, mockSendMessage);
 
-      expect(mockExec).toHaveBeenCalledWith("overstory", ["prime", "--agent", "orchestrator", "--compact"]);
+      expect(mockExec).toHaveBeenCalledWith("overstory", ["prime", "--agent", "coordinator", "--compact"]);
       expect(mockSendMessage).toHaveBeenCalledTimes(1);
     });
 
@@ -487,7 +487,7 @@ describe("overstory", () => {
       await handleSessionShutdown(mockExec);
 
       expect(mockExec).toHaveBeenCalledTimes(2);
-      expect(mockExec).toHaveBeenCalledWith("overstory", ["log", "session-end", "--agent", "orchestrator"]);
+      expect(mockExec).toHaveBeenCalledWith("overstory", ["log", "session-end", "--agent", "coordinator"]);
       expect(mockExec).toHaveBeenCalledWith("mulch", ["learn"]);
     });
   });

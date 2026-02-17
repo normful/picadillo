@@ -13,7 +13,7 @@ export async function overstoryPrime(
     const { stdout } = await execFn("overstory", [
       "prime",
       "--agent",
-      "orchestrator",
+      "coordinator",
       ...(forCompact ? ["--compact"] : []),
     ]);
     primeText = stdout;
@@ -33,7 +33,7 @@ export async function overstoryMailCheck(
       "check",
       "--inject",
       "--agent",
-      "orchestrator",
+      "coordinator",
     ]);
     mailText = stdout;
   } catch (e) {
@@ -51,7 +51,7 @@ export async function logToolStart(
       "log",
       "tool-start",
       "--agent",
-      "orchestrator",
+      "coordinator",
       "--tool-name",
       toolName,
     ]);
@@ -69,7 +69,7 @@ export async function logToolEnd(
       "log",
       "tool-end",
       "--agent",
-      "orchestrator",
+      "coordinator",
       "--tool-name",
       toolName,
     ]);
@@ -86,7 +86,7 @@ export async function logSessionEnd(
       "log",
       "session-end",
       "--agent",
-      "orchestrator",
+      "coordinator",
     ]);
   } catch (e) {
     console.error("overstory log session-end failed:", e);
