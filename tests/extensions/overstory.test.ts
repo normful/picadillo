@@ -7,7 +7,7 @@ import {
   logSessionEnd,
   mulchLearn,
   handleSessionStart,
-  handleBeforeAgentStart,
+  sendMailAppendedToUserPrompt,
   handleToolExecutionEnd,
   handleToolExecutionStart,
   handleSessionCompact,
@@ -220,9 +220,9 @@ describe("overstory", () => {
     });
   });
 
-  describe("handleBeforeAgentStart", () => {
+  describe("sendMailAppendedToUserPrompt", () => {
     test("returns message with userPrompt and mail content", () => {
-      const result = handleBeforeAgentStart("fix the bug", "You have 5 new messages");
+      const result = sendMailAppendedToUserPrompt("fix the bug", "You have 5 new messages");
       expect(result).toEqual({
         message: {
           customType: OVERSTORY_MESSAGE_TYPE,
@@ -233,7 +233,7 @@ describe("overstory", () => {
     });
 
     test("returns empty string when no mail", () => {
-      const result = handleBeforeAgentStart("fix the bug", "");
+      const result = sendMailAppendedToUserPrompt("fix the bug", "");
       expect(result).toEqual({
         message: {
           customType: OVERSTORY_MESSAGE_TYPE,
@@ -244,7 +244,7 @@ describe("overstory", () => {
     });
 
     test("returns message with mail only when userPrompt is empty but mail exists", () => {
-      const result = handleBeforeAgentStart("", "You have mail");
+      const result = sendMailAppendedToUserPrompt("", "You have mail");
       // When userPrompt is empty but mail exists, it becomes just the mail part
       expect(result).toEqual({
         message: {
@@ -256,7 +256,7 @@ describe("overstory", () => {
     });
 
     test("returns empty message when both are empty", () => {
-      const result = handleBeforeAgentStart("", "");
+      const result = sendMailAppendedToUserPrompt("", "");
       expect(result).toEqual({
         message: {
           customType: OVERSTORY_MESSAGE_TYPE,
